@@ -118,7 +118,7 @@
   <body>
     <nav class="nav">
       <div>
-        <a href="https://reacttraining.com">React Training</a> / React Idle
+        <a href="https://reacttraining.com">React Training</a> / React Network
       </div>
       <div class="external-links">
         <a href="https://reacttraining.com">Workshops</a>
@@ -131,7 +131,7 @@
 <h2 id="what"><a class="header-anchor" href="#what" aria-hidden="true">#</a> What?</h2>
 <p>Notifies your app when the network connection goes online or offline.</p>
 <h2 id="why"><a class="header-anchor" href="#why" aria-hidden="true">#</a> Why?</h2>
-<p>Because the next billion users of the internet will have a decent device but a spotty connection. Having a component to help you declarative deal with that is super fantastic.</p>
+<p>Because the next billion users of the internet will have a decent device but a spotty connection. Having a component to help you declaratively deal with that is super fantastic.</p>
 <h2 id="installation"><a class="header-anchor" href="#installation" aria-hidden="true">#</a> Installation</h2>
 <pre><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> react-network
 <span class="token comment" spellcheck="true"># or</span>
@@ -154,7 +154,7 @@ yarn add react-network
 <pre><code class="language-js"><span class="token keyword">const</span> Network <span class="token operator">=</span> ReactNetwork<span class="token punctuation">.</span><span class="token keyword">default</span>
 </code></pre>
 <h2 id="how"><a class="header-anchor" href="#how" aria-hidden="true">#</a> How?</h2>
-<pre class="render-js-code"><code class="jsx"><span class="token comment" spellcheck="true">// import Network from 'react-network'</span>
+<pre><code class="language-jsx"><span class="token comment" spellcheck="true">// import Network from 'react-network'</span>
 <span class="token keyword">const</span> Network <span class="token operator">=</span> ReactNetwork<span class="token punctuation">.</span><span class="token keyword">default</span>
 
 ReactDOM<span class="token punctuation">.</span><span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">(</span>
@@ -182,43 +182,10 @@ ReactDOM<span class="token punctuation">.</span><span class="token function">ren
   <span class="token operator">/</span><span class="token operator">></span>
 <span class="token punctuation">)</span><span class="token punctuation">,</span> DOM_NODE<span class="token punctuation">)</span>
 </code></pre>
-<div id="render-ugjsvot1vdg" class="render-js"></div>
-<script type="text/babel">
-(function() { var DOM_NODE = document.getElementById("render-ugjsvot1vdg");
-// import Network from 'react-network'
-const Network = ReactNetwork.default
-
-ReactDOM.render((
-  <Network
-    onChange={({ online }) => {
-      if (online && window.cornify_add) {
-        window.cornify_add()
-      }
-    }}
-    render={({ online }) =>
-      <div style={{ textAlign: 'center' }}>
-        <p>Every time you go back online, a unicorn is born!</p>
-        <p>
-          You can open up the devtools to simulate losing the
-          network, or actually turn off your wifi to see these demos.
-        </p>
-        <h1>
-          {online
-            ? "You are online."
-            : "You are at a hotel."
-          }
-        </h1>
-      </div>
-    }
-  />
-), DOM_NODE)
-
-})()</script>
-
 <h2 id="props"><a class="header-anchor" href="#props" aria-hidden="true">#</a> Props</h2>
 <h3 id="render"><a class="header-anchor" href="#render" aria-hidden="true">#</a> <code>render</code></h3>
 <p>Whatever you'd like to render in response to changes in the network.</p>
-<pre class="render-js-code"><code class="jsx"><span class="token comment" spellcheck="true">// import Network from 'react-network'</span>
+<pre><code class="language-jsx"><span class="token comment" spellcheck="true">// import Network from 'react-network'</span>
 <span class="token keyword">const</span> Network <span class="token operator">=</span> ReactNetwork<span class="token punctuation">.</span><span class="token keyword">default</span>
 ReactDOM<span class="token punctuation">.</span><span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">(</span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Network</span> <span class="token attr-name">render</span><span class="token script language-javascript"><span class="token punctuation">=</span><span class="token punctuation">{</span><span class="token punctuation">(</span><span class="token punctuation">{</span> online <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span>
@@ -226,22 +193,21 @@ ReactDOM<span class="token punctuation">.</span><span class="token function">ren
   <span class="token punctuation">}</span></span><span class="token punctuation">/></span></span>
 <span class="token punctuation">)</span><span class="token punctuation">,</span> DOM_NODE<span class="token punctuation">)</span>
 </code></pre>
-<div id="render-7ss68n3vidg" class="render-js"></div>
-<script type="text/babel">
-(function() { var DOM_NODE = document.getElementById("render-7ss68n3vidg");
-// import Network from 'react-network'
-const Network = ReactNetwork.default
-ReactDOM.render((
-  <Network render={({ online }) =>
-    <p>You are online: {online ? 'Yep' : 'Nope'}.</p>
-  }/>
-), DOM_NODE)
-
-})()</script>
-
+<h3 id="children"><a class="header-anchor" href="#children" aria-hidden="true">#</a> <code>children</code></h3>
+<p>You can also use the <a href="https://reactjs.org/docs/render-props.html#using-props-other-than-render">Function as Child</a> pattern.</p>
+<pre><code class="language-jsx"><span class="token comment" spellcheck="true">// import Network from 'react-network'</span>
+<span class="token keyword">const</span> Network <span class="token operator">=</span> ReactNetwork<span class="token punctuation">.</span><span class="token keyword">default</span>
+ReactDOM<span class="token punctuation">.</span><span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">(</span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Network</span><span class="token punctuation">></span></span>
+    <span class="token punctuation">{</span>
+      <span class="token punctuation">(</span><span class="token punctuation">{</span> online <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>You are online<span class="token punctuation">:</span> <span class="token punctuation">{</span>online <span class="token operator">?</span> <span class="token string">'Yep'</span> <span class="token punctuation">:</span> <span class="token string">'Nope'</span><span class="token punctuation">}</span><span class="token punctuation">.</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+    <span class="token punctuation">}</span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>Network</span><span class="token punctuation">></span></span>
+<span class="token punctuation">)</span><span class="token punctuation">,</span> DOM_NODE<span class="token punctuation">)</span>
+</code></pre>
 <h3 id="onchange"><a class="header-anchor" href="#onchange" aria-hidden="true">#</a> <code>onChange</code></h3>
 <p>Called whenever the network goes on or offline. This is useful to fire off some imperative code, like adding unicorns to the page or more practically, avoiding resource fetching until the network comes back online.</p>
-<pre class="render-js-code"><code class="jsx"><span class="token comment" spellcheck="true">// import Network from 'react-network'</span>
+<pre><code class="language-jsx"><span class="token comment" spellcheck="true">// import Network from 'react-network'</span>
 <span class="token keyword">const</span> Network <span class="token operator">=</span> ReactNetwork<span class="token punctuation">.</span><span class="token keyword">default</span>
 
 <span class="token keyword">class</span> <span class="token class-name">App</span> <span class="token keyword">extends</span> <span class="token class-name">React<span class="token punctuation">.</span>Component</span> <span class="token punctuation">{</span>
@@ -292,62 +258,6 @@ ReactDOM.render((
 
 ReactDOM<span class="token punctuation">.</span><span class="token function">render</span><span class="token punctuation">(</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>App</span><span class="token punctuation">/></span></span><span class="token punctuation">,</span> DOM_NODE<span class="token punctuation">)</span>
 </code></pre>
-<div id="render-jrjv6iiq9ng" class="render-js"></div>
-<script type="text/babel">
-(function() { var DOM_NODE = document.getElementById("render-jrjv6iiq9ng");
-// import Network from 'react-network'
-const Network = ReactNetwork.default
-
-class App extends React.Component {
-  state = {
-    image: null
-  }
-
-  handleNetworkChange = ({ online }) => {
-    if (online) {
-      this.fetch()
-    } else {
-      clearTimeout(this.timeout)
-    }
-  }
-
-  fetch = () => {
-    fetch('https://unsplash.it/640/400/?random')
-      .then(res => res.blob())
-      .then(blob => {
-        var image = URL.createObjectURL(blob)
-        this.setState({ image })
-        this.timeout = setTimeout(this.fetch, 5000)
-      })
-  }
-
-  render() {
-    return (
-      <div style={{ position: 'relative' }}>
-        {this.state.image ? (
-          <img src={this.state.image} width="100%"/>
-        ) : (
-          <p>Loading first image</p>
-        )}
-        <Network
-          onChange={this.handleNetworkChange}
-          render={({ online }) => (
-            online ? null : (
-              <p style={{ color: 'red' }}>
-                You are offline, images will continue when you get back online.
-              </p>
-            )
-          )}
-        />
-      </div>
-    )
-  }
-}
-
-ReactDOM.render(<App/>, DOM_NODE)
-
-})()</script>
-
 <h2 id="legal"><a class="header-anchor" href="#legal" aria-hidden="true">#</a> Legal</h2>
 <p>Released under MIT license.</p>
 <p>Copyright © 2017-present React Training LLC</p>     <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>

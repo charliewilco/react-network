@@ -28,6 +28,7 @@ export default class Network extends Component {
   }
 
   render() {
-    return this.props.render(this.state)
+    const { children, render } = this.props
+    return children ? children(this.state) : render(this.state)
   }
 }

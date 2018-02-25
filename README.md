@@ -97,6 +97,22 @@ ReactDOM.render((
 ), DOM_NODE)
 ```
 
+### `children`
+
+You can also use the [Function as Child](https://reactjs.org/docs/render-props.html#using-props-other-than-render) pattern.
+
+```jsx
+// import Network from 'react-network'
+const Network = ReactNetwork.default
+ReactDOM.render((
+  <Network>
+    {
+      ({ online }) => <p>You are online: {online ? 'Yep' : 'Nope'}.</p>
+    }
+  </Network>
+), DOM_NODE)
+```
+
 ### `onChange`
 
 Called whenever the network goes on or offline. This is useful to fire off some imperative code, like adding unicorns to the page or more practically, avoiding resource fetching until the network comes back online.
